@@ -2,12 +2,13 @@
 1. 有哪些常用的数据结构？  
   
   向量(vector)、矩阵(matrix)、数组(array)、数据框(dataframe)、列表(list)
-2. `character`和`factor`有何区别？如何相互转换？谈谈你对`factor`的理解。
-###### 区别
-`character`指的是字符型数据，其中的内容是字符串，不能进行比较以及其他的运算。`factor`指的是因子，类别变量与有序型变量称为因子，虽然因子的标签常是字符串，但却代表着不同的水平或者层次。如果是有序型因子，则可进行比较，在后续的统计分析中，可以得出类似“随着某水平的增加，出现某趋势的结论”。字符型数据不可。
-###### 转换
-x为字符，转因子：x<-as.factor(x)；x为因子转字符x<-as.character(x)
-###### 理解
+2. `character`和`factor`有何区别？如何相互转换？谈谈你对`factor`的理解。  
+**区别**  
+`character`指的是字符型数据，其中的内容是字符串，不能进行比较以及其他的运算。`factor`指的是因子，类别变量与有序型变量称为因子，虽然因子的标签常是字符串，但却代表着不同的水平或者层次。如果是有序型因子，则可进行比较，在后续的统计分析中，可以得出类似“随着某水平的增加，出现某趋势的结论”。字符型数据不可。  
+**转换**  
+x为字符，转因子：`x<-as.factor(x)`；  
+x为因子转字符:`x<-as.character(x)`  
+**理解**  
 变量有名义型、有序型、连续型，前两种可以归结为因子。也就是说需要分类的变量可以归结为因子。因子非常实用，可将字符型的数据变得可以比较，便于的数据分析与视觉呈现。
 3. `matrix`与`dataframe`有何区别？如何相互转换？
 首先，`matrix`与`dataframe`都是二维的。  
@@ -487,6 +488,7 @@ default.stringsAsFactors())
 ```
 现在要找出`spending`数据中与`expense`不重复的列，合并成一个更完整的数据，可进行如下操作：
 ```
+> cobind(expense,
 +       spending[!spending %in% expense]
 +       )
     name food living traveling recreation others clothes
